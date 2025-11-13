@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-3 group">
             <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span className="text-blue-900 font-bold text-lg">PH</span>
+              <span className="text-blue-900 font-bold text-lg">KM</span>
             </div>
             <div>
               <span className="text-2xl font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">Kambataan Muna</span>

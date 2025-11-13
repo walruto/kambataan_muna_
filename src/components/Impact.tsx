@@ -2,10 +2,8 @@ import { BookOpen, Home, Heart, Users } from 'lucide-react';
 
 const Impact = () => {
   const impactStats = [
-    { icon: Users, number: "1700+", label: "Students Helped", color: "text-yellow-400", bg: "bg-yellow-400/20" },
+    { icon: Users, number: "340+", label: "Students Helped", color: "text-yellow-400", bg: "bg-yellow-400/20" },
     { icon: BookOpen, number: "1500+", label: "School Supplies Provided", color: "text-blue-400", bg: "bg-blue-400/20" },
-    { icon: Home, number: "2", label: "Schools Assisted", color: "text-red-400", bg: "bg-red-400/20" },
-    { icon: Heart, number: "$2,130", label: "Fundraised", color: "text-yellow-400", bg: "bg-yellow-400/20" }
   ];
 
   const achievements = [
@@ -13,15 +11,14 @@ const Impact = () => {
       title: "Volunteers",
       description: "Gained volunteers from multiple events, social media posts and community outreach",
   image: "/482675107_17860856133362172_6205449140449101662_n.jpg",
-      year: "2024",
-      impact: "Over 75 Volunteers"
+      year: "2025",
     },
     {
       title: "Teresa Elementary School",
       description: "Helped provide students with school supplies and slippers.",
   image: "/att.RphFG_h8K5D7mil84wal0LM1xI-JlZAkGMIq8bvdMRg.JPG",
-      year: "2024",
-      impact: "1000+ students"
+      year: "2025",
+      impact: "340+ students"
     },
     {
       title: "Batang-Batang Proper Elementary School ",
