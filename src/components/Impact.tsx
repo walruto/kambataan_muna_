@@ -1,31 +1,34 @@
-import { BookOpen, Home, Heart, Users } from 'lucide-react';
+import { BookOpen, Users } from 'lucide-react';
 
 const Impact = () => {
   const impactStats = [
-    { icon: Users, number: "340+", label: "Students Helped", color: "text-yellow-400", bg: "bg-yellow-400/20" },
-    { icon: BookOpen, number: "1500+", label: "School Supplies Provided", color: "text-blue-400", bg: "bg-blue-400/20" },
+    { icon: Users, number: "1,300+", label: "Students Impacted", color: "text-yellow-400", bg: "bg-yellow-400/20" },
+    { icon: BookOpen, number: "3,200+", label: "School Supplies Provided", color: "text-blue-400", bg: "bg-blue-400/20" },
+    { icon: null, number: "2,160+", label: "Meals Provided", color: "text-red-400", bg: "bg-red-400/20", img: "/lumpia.png" },
+    { icon: null, number: "1,300+", label: "Slippers Donated", color: "text-yellow-500", bg: "bg-yellow-500/20", img: "/slippers.jpeg" },
   ];
 
   const achievements = [
     {
-      title: "Volunteers",
-      description: "Gained volunteers from multiple events, social media posts and community outreach",
-  image: "/482675107_17860856133362172_6205449140449101662_n.jpg",
+      title: "David Elementary School",
+      description: "Helped <span class=\"font-bold\">980+</span> students get <span class=\"font-bold\">1600+</span> school supplies, <span class=\"font-bold\">980+</span> pairs of slippers, and a feeding program as well <span class=\"font-bold\">50K</span> Philippine pesos into their flood and typhoon relief fund.",
+      image: "/david_elementary.jpeg",
       year: "2025",
+      impact: "<span class=\"font-bold\">980+</span> students"
     },
     {
       title: "Teresa Elementary School",
-      description: "Helped provide students with school supplies and slippers.",
-  image: "/att.RphFG_h8K5D7mil84wal0LM1xI-JlZAkGMIq8bvdMRg.JPG",
+      description: "Helped provide students with <span class=\"font-bold\">school supplies</span> and <span class=\"font-bold\">slippers</span>.",
+      image: "/att.RphFG_h8K5D7mil84wal0LM1xI-JlZAkGMIq8bvdMRg.JPG",
       year: "2025",
-      impact: "340+ students"
+      impact: "<span class=\"font-bold\">340+</span> students"
     },
     {
       title: "Batang-Batang Proper Elementary School ",
-      description: "We’re beyond honored to have shared joy with the 135 amazing students of Batang-Batang Proper Elementary School through 950 school supplies items, 135 pairs of slippers, and a feeding program.",
+      description: "We’re beyond honored to have shared joy with the <span class=\"font-bold\">135</span> amazing students of Batang-Batang Proper Elementary School through <span class=\"font-bold\">950</span> school supplies items, <span class=\"font-bold\">135</span> pairs of slippers, and a feeding program.",
       image: "/514731525_17876759391362172_3996493482058914439_n.jpg",
       year: "2025",
-      impact: "100+ students"
+      impact: "<span class=\"font-bold\">100+</span> students"
     }
   ];
 
@@ -50,12 +53,27 @@ const Impact = () => {
         </div>
 
         {/* Impact Statistics */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 gap-8 mb-20 justify-center">
           {impactStats.map((stat, index) => (
             <div key={index} className="text-center group">
               <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 hover:bg-white/20 transition-all duration-500 border border-white/20 transform hover:scale-105 hover:-translate-y-2 group">
                 <div className={`${stat.bg} rounded-2xl p-4 w-fit mx-auto mb-6 group-hover:scale-125 transition-transform duration-300`}>
-                  <stat.icon className={`w-12 h-12 ${stat.color} group-hover:animate-bounce`} />
+                  {stat.icon ? (
+                    <stat.icon className={`w-12 h-12 ${stat.color} group-hover:animate-bounce`} />
+                  ) : (
+                    stat.label === 'Slippers Donated' ? (
+                      <span className="inline-block w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mt-2">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+                          <rect x="7" y="20" width="18" height="5" rx="2.5" fill="#FBBF24" stroke="#F59E0B" strokeWidth="2" />
+                          <path d="M10 20 Q16 10 22 20" stroke="#F59E0B" strokeWidth="2" fill="none" />
+                          <ellipse cx="11" cy="22.5" rx="2" ry="1" fill="#fff" stroke="#F59E0B" strokeWidth="1" />
+                          <ellipse cx="21" cy="22.5" rx="2" ry="1" fill="#fff" stroke="#F59E0B" strokeWidth="1" />
+                        </svg>
+                      </span>
+                    ) : (
+                      <img src={stat.img} alt={stat.label} className="w-16 h-16 object-contain mx-auto mt-2" />
+                    )
+                  )}
                 </div>
                 <div className="text-4xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors duration-300">{stat.number}</div>
                 <div className="text-blue-200 font-semibold group-hover:text-white transition-colors duration-300">{stat.label}</div>
@@ -80,12 +98,12 @@ const Impact = () => {
                     {achievement.year}
                   </div>
                   <div className="absolute bottom-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold group-hover:scale-110 transition-transform duration-300">
-                    {achievement.impact}
+                    <span dangerouslySetInnerHTML={{ __html: achievement.impact || '' }} />
                   </div>
                 </div>
                 <div className="p-8">
                   <h4 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">{achievement.title}</h4>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{achievement.description}</p>
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300" dangerouslySetInnerHTML={{ __html: achievement.description }} />
                 </div>
               </div>
             ))}
@@ -104,7 +122,12 @@ const Impact = () => {
               "/515583763_17876759418362172_4345575558701282870_n.jpg",
               "/515859098_17876759430362172_8351423006579517962_n.jpg",
               "/515902578_17876759382362172_2743566175393380686_n.jpg",
-              "/516037454_17876759346362172_4599886073729098940_n.jpg"
+              "/516037454_17876759346362172_4599886073729098940_n.jpg",
+              "/david_gallery_1.jpeg",
+              "/david_gallery_2.jpg",
+              "/david_gallery_3.jpg",
+              "/david_elementary_4.jpeg",
+
             ].map((image, index) => (
               <div key={index} className="relative group overflow-hidden rounded-2xl shadow-lg">
                 <img 

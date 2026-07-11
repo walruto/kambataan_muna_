@@ -1,5 +1,3 @@
-
-
 const Team = () => {
   return (
     <section
@@ -14,11 +12,12 @@ const Team = () => {
 
       <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
         {/* Team Photo Gallery */}
-        <h3 className="text-4xl font-extrabold text-white text-center mb-16 hover:text-yellow-300 transition-colors duration-300">
+        <h3 className="text-4xl font-extrabold text-white text-center mb-4 hover:text-yellow-300 transition-colors duration-300">
           Our Team in Action
         </h3>
+        <div className="text-yellow-300 text-lg font-semibold text-center mb-6">200+ volunteers across California</div>
         <div className="grid grid-cols-2 gap-14 w-full h-auto">
-          {["IMG_0621.jpg", "IMG_0778.jpg", "IMG_2973.jpg", "IMG_2960.jpg"].map((src, idx) => (
+          {["atwork1.jpeg", "IMG_0778.jpg", "atwork.jpeg","atwork3.jpeg"].map((src, idx) => (
             <div
               key={src}
               className="relative group overflow-hidden rounded-2xl flex items-center justify-center w-full"

@@ -14,12 +14,12 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-red-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">FO</span>
+                <span className="text-white font-bold">KM</span>
               </div>
-              <span className="text-xl font-bold">FilipinOrg</span>
+              <span className="text-xl font-bold">Kabataan Muna</span>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              Empowering Filipino communities through cultural preservation, education, and unity.
+              Empowering Filipino communities through education and advocacy.
             </p>
             <div className="flex items-center space-x-2 text-gray-300">
               <span>Made with</span>

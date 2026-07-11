@@ -26,29 +26,29 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span className="text-blue-900 font-bold text-lg">KM</span>
+            <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 p-0 relative overflow-hidden">
+              <img src="/kabataa_muna_new_logo.JPG" alt="Kabataan Muna Logo" className="absolute w-24 h-24 object-cover rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
             </div>
             <div>
-              <span className="text-2xl font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">Kambataan Muna</span>
-              <div className="text-yellow-300 text-xs font-medium">Building Communities Together</div>
+              <span className="text-2xl font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">Kabataan Muna</span>
+              <div className="text-yellow-300 text-xs font-medium">Put The Youth First</div>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {['team', 'impact', 'volunteering', 'about', 'contact', 'support'].map((item) => (
+            {["team", "impact", "volunteering", "about", "contact", "get-involved"].map((item) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(item)}
+                onClick={() => scrollToSection(item === "get-involved" ? "join-impact-story" : item)}
                 className="text-white hover:text-yellow-300 font-semibold transition-all duration-300 capitalize relative group transform hover:scale-105"
               >
-                {item === 'team' ? 'Our Team' : 
-                 item === 'impact' ? 'Our Impact' : 
-                 item === 'about' ? 'About Us' :
-                 item === 'contact' ? 'Contact Us' : 
-                 item === 'volunteering' ? 'Volunteer' : 
-                 item === 'support' ? 'Support' : item}
+                {item === "team" ? "Our Team" :
+                 item === "impact" ? "Our Impact" :
+                 item === "about" ? "About Us" :
+                 item === "contact" ? "Contact Us" :
+                 item === "volunteering" ? "Volunteer" :
+                 item === "get-involved" ? "Get Involved" : item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
@@ -67,10 +67,10 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-20 left-0 right-0 bg-blue-900 shadow-lg border-t border-blue-800 animate-fadeIn">
             <nav className="flex flex-col py-4">
-              {['team', 'impact', 'volunteering', 'about', 'contact', 'support'].map((item) => (
+              {['team', 'impact', 'volunteering', 'about', 'contact', 'get-involved'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(item)}
+                  onClick={() => scrollToSection(item === "get-involved" ? "join-impact-story" : item)}
                   className="text-left px-6 py-3 text-white hover:text-yellow-300 hover:bg-blue-800 font-semibold transition-all duration-300 capitalize transform hover:translate-x-2"
                 >
                   {item === 'team' ? 'Our Team' : 
@@ -78,7 +78,7 @@ const Header = () => {
                    item === 'about' ? 'About Us' :
                    item === 'contact' ? 'Contact Us' : 
                    item === 'volunteering' ? 'Volunteer' : 
-                   item === 'support' ? 'Support' : item}
+                   item === 'get-involved' ? 'Get Involved' : item}
                 </button>
               ))}
             </nav>

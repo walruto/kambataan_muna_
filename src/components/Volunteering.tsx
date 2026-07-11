@@ -10,7 +10,7 @@ const Volunteering = () => {
       </div>
 
       {/* Join Our Impact Story CTA (copied from Impact.tsx) */}
-      <div className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 rounded-3xl p-12 text-center text-white shadow-2xl border border-red-500/30 hover:shadow-3xl transition-all duration-500 transform hover:scale-105 mt-12 max-w-4xl mx-auto">
+      <div id="join-impact-story" className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 rounded-3xl p-12 text-center text-white shadow-2xl border border-red-500/30 hover:shadow-3xl transition-all duration-500 transform hover:scale-105 mt-12 max-w-4xl mx-auto">
         <div className="bg-yellow-400/20 rounded-full p-6 w-fit mx-auto mb-8 hover:bg-yellow-400/30 transition-colors duration-300">
           <Award className="w-16 h-16 text-yellow-400 hover:scale-110 transition-transform duration-300" />
         </div>
