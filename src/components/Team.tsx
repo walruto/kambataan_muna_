@@ -15,7 +15,7 @@ const Team = () => {
         <h3 className="text-4xl font-extrabold text-white text-center mb-4 hover:text-yellow-300 transition-colors duration-300">
           Our Team in Action
         </h3>
-        <div className="text-yellow-300 text-lg font-semibold text-center mb-6">200+ volunteers across California</div>
+        <div className="text-yellow-300 text-lg font-semibold text-center mb-6">300+ volunteers across California</div>
         <div className="grid grid-cols-2 gap-14 w-full h-auto">
           {["atwork1.jpeg", "IMG_0778.jpg", "atwork.jpeg","atwork3.jpeg"].map((src, idx) => (
             <div
